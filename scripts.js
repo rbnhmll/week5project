@@ -43,7 +43,7 @@ app.getUserInputs = function() {
 		else if ($(".friendLocation").val() == "") {
 			alert("Please fill in your friend's location!");
 		}
-		else if ( !($("input[type=radio").is(':checked')) ) {
+		else if ( !($("input[type=radio]").is(':checked')) ) {
 			alert("Please choose either Coffee or Beer!");
 		}
 		else {
