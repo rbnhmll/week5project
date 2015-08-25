@@ -53,7 +53,7 @@ app.getUserInputs = function() {
 			var yourLocation = $(".yourLocation").val();
 			var friendLocation = $(".friendLocation").val();
 			app.venueType = $("input:radio[name=venueType]:checked").val();
-			$(".resultsContainer").removeClass("hide");
+			$(".resultsContainer").removeClass("hide").addClass("animated bounceInUp");
 			app.convertToGeo(yourLocation,friendLocation);
 		};
 	});

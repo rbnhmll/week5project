@@ -9,7 +9,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 $sans: 'Open Sans', sans-serif;
 $serif: 'Roboto Slab', serif;
 
-$lightblue: #7BC0FF;
+$lightblue: #006FFF;
 $darkblue: #2B4862;
 $orange: #F1B04D;
 
@@ -20,8 +20,8 @@ $orange: #F1B04D;
 	background: $orange;
 	padding: 20px;
 	border: none;
-	border-radius: 5px;
-	box-shadow: 5px 5px 0 $darkblue;
+	// border-radius: 5px;
+	box-shadow: 4px 4px 0 $darkblue;
 	text-shadow: 1px 1px 0 $darkblue;
 	border: 1px solid transparent;
 	transition: all 0.5s ease;
@@ -70,7 +70,7 @@ html {
 
 body {
 	text-align: center;
-	background: linear-gradient(lighten($lightblue, 15),$lightblue);
+	background: linear-gradient(rgba($lightblue, 0.3), rgba($lightblue, 0.3)), url('images/patterns/shattered.png');
 }
 
 .wrapper {
@@ -78,7 +78,7 @@ body {
 	margin: 50px auto;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("images/concrete_seamless.png");
 	padding: 25px;
-	box-shadow: 10px 15px 0 $darkblue;
+	box-shadow: 5px 10px 0 $darkblue;
 	border-radius: 10px;
 }
 
@@ -101,13 +101,19 @@ h1 {
 }
 
 #map {
+	width: 90%;
 	position:relative;
 	top:0;
 	bottom:0;
-	height: 350px;
-	margin: 50px auto;
+	height: 400px;
+	margin: 0 auto 50px auto;
 	// border-radius: 10px;
 	border: 2px solid $darkblue;
+}
+
+.locationLabel {
+	font-family: $sans;
+	font-size: 1.2rem;
 }
 
 .submitForm {
@@ -115,11 +121,17 @@ h1 {
 	flex-direction: column;
 	align-items: center;
 	.inputContainer {
-		width: 72%;
+		width: 75%;
 		.userInputField {
 			width: 100%;
 			padding: 20px;
+			margin-top: 5px;
 			border: 2px solid lighten($darkblue, 10);
+			transition: all 0.5s ease;
+			&:hover,
+			&:focus {
+				box-shadow: 4px 4px 0 $darkblue;
+			}
 		}
 	}
 }
@@ -138,7 +150,7 @@ input:-webkit-autofill {
 
 
 .submitBtn {
-	width: 300px;
+	width: 100%;
 	font-size: 1.5rem;
 	@include button;
 	&:hover {
@@ -149,21 +161,26 @@ input:-webkit-autofill {
 	}
 }
 
-.chooserContainer {
-	display: flex;
-	flex-direction: row;
-	width: 300px;
-	padding: 0;
-	justify-content: space-between;
-	margin-bottom: 20px;
-	label {
-		width: 48%;
-		@include button;
-		&:hover {
-			@include buttonHover
-		}
-		&:active {
-			@include buttonActive
+
+.button-container {
+	width: 50%;
+	margin: 50px 0;
+	.chooserContainer {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		padding: 0;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		label {
+			width: 47.5%;
+			@include button;
+			&:hover {
+				@include buttonHover
+			}
+			&:active {
+				@include buttonActive
+			}
 		}
 	}
 }
@@ -179,7 +196,9 @@ display: none;
 }
 
 .resultsContainer {
-	background: #fff;
+	width: 90%;
+	margin: 0 auto;
+	background: linear-gradient(rgba(#fff, 0.6), rgba(#fff, 0.6)), url('images/patterns/hexellence.png');
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -187,6 +206,9 @@ display: none;
 	border: 2px solid $darkblue;
 	margin-top: 50px;
 	padding: 25px;
+	img {
+		box-shadow: 4px 4px 0 $darkblue;
+	}
 }
 
 .venueContainer {
@@ -195,6 +217,7 @@ display: none;
 	p {
 		margin: 0;
 		font-weight: 300;
+		line-height: 1.7;
 	}
 	a {
 		color: $darkblue;
@@ -209,7 +232,7 @@ display: none;
 }
 
 .resultsContainer img {
-	border-radius: 5px;
+	// border-radius: 5px;
 	max-width: 100%;
 }
 
@@ -220,8 +243,6 @@ display: none;
 
 .social-box {
 	margin-top: 25px;
-	// padding: 10px;
-	// border: 2px solid $darkblue;
 }
 
 // .twitter-button {
@@ -240,7 +261,7 @@ display: none;
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: 999999999999;
+	z-index: 99999999;
 	display: flex;
 	transform: scale(1.3);
 	opacity: 0;
@@ -271,8 +292,8 @@ display: none;
 	position: relative;
 	z-index: 10;
 	margin: auto;
-	border-radius: 10px;
-	box-shadow: 10px 15px 0 transparentize($darkblue, 0.4);
+	// border-radius: 10px;
+	box-shadow: 5px 10px 0 transparentize($darkblue, 0.4);
 	h5 {
 		margin: 10px 0 0px 0;
 	}
@@ -288,7 +309,7 @@ display: none;
 	display: flex;
 	width: 30px;
 	height: 30px;
-	border-radius: 50%;
+	// border-radius: 50%;
 	background: transparentize($orange, .1);
 	box-shadow: 2px 3px 0 transparentize($darkblue, 0.4);
 }
@@ -296,6 +317,7 @@ display: none;
 .close-button i {
 	margin: auto;
 	color: #fff;
+	cursor: pointer;
 }
 
 .show-button {
@@ -332,6 +354,15 @@ display: none;
 	.wrapper {
 		margin: 25px 10px;
 	}
+	.button-container {
+		width: 75%;
+	}
+	.inputContainer {
+		width: 75%;
+		.input {
+			width: 100%;
+		}
+	}
 }
 
 @media all and (max-width: 700px) {
@@ -341,6 +372,14 @@ display: none;
 	.venueContainer {
 		width: 100%;
 		margin-bottom: 35px;
+	}
+	.submitForm {
+		.inputContainer {
+			width: 90%;
+		}
+	}
+	.button-container {
+		width: 90%;
 	}
 }
 
@@ -362,10 +401,14 @@ display: none;
 			width: 100%;
 		}
 	}
-	.chooserContainer {
+	.button-container {
 		width: 100%;
 	}
-	.submitBtn {
+	#map {
+		width: 100%;
+		height: 350px;
+	}
+	.resultsContainer {
 		width: 100%;
 	}
 }
