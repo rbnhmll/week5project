@@ -13,6 +13,7 @@ $lightblue: #006FFF;
 $darkblue: #2B4862;
 $orange: #F1B04D;
 
+
 @mixin button {
 	font-family: $sans;
 	text-transform: uppercase;
@@ -21,10 +22,11 @@ $orange: #F1B04D;
 	padding: 20px;
 	border: none;
 	// border-radius: 5px;
-	box-shadow: 4px 4px 0 $darkblue;
+	border-radius: 0;
+	box-shadow: 4px 4px 0 transparentize($darkblue, 0.1);
 	text-shadow: 1px 1px 0 $darkblue;
 	border: 1px solid transparent;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 	font-weight: 700;
 	letter-spacing: 4px;
 	cursor: pointer;
@@ -57,7 +59,7 @@ $orange: #F1B04D;
 	border-radius: 5px;
 	cursor: pointer;
 	padding: 3px 4px;
-	transition: all 0.5s ease;
+	transition: all 0.3s ease;
 }
 
 
@@ -78,8 +80,8 @@ body {
 	margin: 50px auto;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("images/concrete_seamless.png");
 	padding: 25px;
-	box-shadow: 5px 10px 0 $darkblue;
-	border-radius: 10px;
+	box-shadow: 10px 10px 0 transparentize($darkblue, 0.1);
+	// border-radius: 10px;
 }
 
 h1,
@@ -94,7 +96,7 @@ h1 {
 	font-weight: 800;
 	font-size: 4.7rem;
 	letter-spacing: 3px;
-	text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.8), 10px 10px 0 transparentize($darkblue, 0.4);
+	text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.8), 8px 8px 0 transparentize($darkblue, 0.4);
 	span {
 		color: $orange;
 	}
@@ -105,7 +107,7 @@ h1 {
 	position:relative;
 	top:0;
 	bottom:0;
-	height: 400px;
+	height: 350px;
 	margin: 0 auto 50px auto;
 	// border-radius: 10px;
 	border: 2px solid $darkblue;
@@ -127,10 +129,11 @@ h1 {
 			padding: 20px;
 			margin-top: 5px;
 			border: 2px solid lighten($darkblue, 10);
+			border-radius: 0;
 			transition: all 0.5s ease;
 			&:hover,
 			&:focus {
-				box-shadow: 4px 4px 0 $darkblue;
+				box-shadow: 4px 4px 0 transparentize($darkblue, 0.1);
 			}
 		}
 	}
@@ -198,21 +201,20 @@ display: none;
 .resultsContainer {
 	width: 90%;
 	margin: 0 auto;
-	background: linear-gradient(rgba(#fff, 0.6), rgba(#fff, 0.6)), url('images/patterns/hexellence.png');
+	background: linear-gradient(rgba(#fff, 0.5), rgba(#fff, 0.5)), url('images/patterns/hexellence.png');
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	border: 2px solid $darkblue;
 	margin-top: 50px;
-	padding: 25px;
+	padding: 20px;
 	img {
-		box-shadow: 4px 4px 0 $darkblue;
+		box-shadow: 4px 4px 0 transparentize($darkblue, 0.1);
 	}
 }
 
 .venueContainer {
-	padding: 1%;
 	width: 30%;
 	p {
 		margin: 0;
@@ -220,8 +222,11 @@ display: none;
 		line-height: 1.7;
 	}
 	a {
+		display: inline-block;
+		text-decoration: none;
+		margin-top: 20px;
 		color: $darkblue;
-		transition: all 0.5s ease;
+		transition: all 0.3s ease;
 		&:hover {
 			color: $orange;
 		}
@@ -242,13 +247,22 @@ display: none;
 }
 
 .social-box {
-	margin-top: 25px;
+	margin: 25px 0;
+	.twitter-btn {
+		@include button;
+		font-size: 0.8rem;
+		text-decoration: none;
+		color: #fff;
+		background: $orange;
+		padding: 5px 10px;
+		&:hover {
+			@include buttonHover;
+		}
+		&:active {
+			@include buttonActive;
+		}
+	}
 }
-
-// .twitter-button {
-//  @include socialButton;
-// margin-top: 20px;
-// }
 
 
 
@@ -276,7 +290,7 @@ display: none;
 }
 
 .overlay {
-	background: rgba(0,0,0,0.4);
+	background: rgba(0, 0, 0, 0.4);
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -289,9 +303,9 @@ display: none;
 	max-width: 500px;
 	background: transparentize(#fff, 0.1);
 	padding: 20px;
+	margin: auto;
 	position: relative;
 	z-index: 10;
-	margin: auto;
 	// border-radius: 10px;
 	box-shadow: 5px 10px 0 transparentize($darkblue, 0.4);
 	h5 {
@@ -346,13 +360,13 @@ display: none;
 
 @media all and (max-width: 1020px) {
 	.wrapper {
-		margin: 50px 10px;
+		margin: 50px 20px;
 	}
 }
 
 @media all and (max-width: 800px) {
 	.wrapper {
-		margin: 25px 10px;
+		margin: 25px 20px;
 	}
 	.button-container {
 		width: 75%;
@@ -387,11 +401,14 @@ display: none;
 	h1 {
 		font-size: 4rem;
 	}
+	.modal {
+		margin: auto 5%;
+	}
 }
 
 @media all and (max-width: 485px) {
 	.wrapper {
-		margin: 10px;
+		margin: 15px;
 	}
 	h1 {
 		font-size: 3.5rem;

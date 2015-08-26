@@ -181,8 +181,7 @@ body {
   background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("images/concrete_seamless.png");
   background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("images/concrete_seamless.png");
   padding: 25px;
-  box-shadow: 5px 10px 0 #2B4862;
-  border-radius: 10px;
+  box-shadow: 10px 10px 0 rgba(43, 72, 98, 0.9);
 }
 
 h1,
@@ -197,7 +196,7 @@ h1 {
   font-weight: 800;
   font-size: 4.7rem;
   letter-spacing: 3px;
-  text-shadow: 4px 4px 0 rgba(255, 255, 255, 0.8), 10px 10px 0 rgba(43, 72, 98, 0.6);
+  text-shadow: 3px 3px 0 rgba(255, 255, 255, 0.8), 8px 8px 0 rgba(43, 72, 98, 0.6);
 }
 
 h1 span {
@@ -209,7 +208,7 @@ h1 span {
   position: relative;
   top: 0;
   bottom: 0;
-  height: 400px;
+  height: 350px;
   margin: 0 auto 50px auto;
   border: 2px solid #2B4862;
 }
@@ -244,13 +243,14 @@ h1 span {
   padding: 20px;
   margin-top: 5px;
   border: 2px solid #3b6285;
+  border-radius: 0;
   -webkit-transition: all 0.5s ease;
           transition: all 0.5s ease;
 }
 
 .submitForm .inputContainer .userInputField:hover,
 .submitForm .inputContainer .userInputField:focus {
-  box-shadow: 4px 4px 0 #2B4862;
+  box-shadow: 4px 4px 0 rgba(43, 72, 98, 0.9);
 }
 
 label {
@@ -274,11 +274,12 @@ input:-webkit-autofill {
   background: #F1B04D;
   padding: 20px;
   border: none;
-  box-shadow: 4px 4px 0 #2B4862;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(43, 72, 98, 0.9);
   text-shadow: 1px 1px 0 #2B4862;
   border: 1px solid transparent;
-  -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   font-weight: 700;
   letter-spacing: 4px;
   cursor: pointer;
@@ -329,11 +330,12 @@ input:-webkit-autofill {
   background: #F1B04D;
   padding: 20px;
   border: none;
-  box-shadow: 4px 4px 0 #2B4862;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(43, 72, 98, 0.9);
   text-shadow: 1px 1px 0 #2B4862;
   border: 1px solid transparent;
-  -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
   font-weight: 700;
   letter-spacing: 4px;
   cursor: pointer;
@@ -368,8 +370,8 @@ input[type=radio] {
 .resultsContainer {
   width: 90%;
   margin: 0 auto;
-  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("images/patterns/hexellence.png");
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("images/patterns/hexellence.png");
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("images/patterns/hexellence.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("images/patterns/hexellence.png");
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,20 +384,20 @@ input[type=radio] {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border: 2px solid #2B4862;
   margin-top: 50px;
-  padding: 25px;
+  padding: 20px;
 }
 
 .resultsContainer img {
-  box-shadow: 4px 4px 0 #2B4862;
+  box-shadow: 4px 4px 0 rgba(43, 72, 98, 0.9);
 }
 
 .venueContainer {
-  padding: 1%;
   width: 30%;
 }
 
@@ -406,9 +408,12 @@ input[type=radio] {
 }
 
 .venueContainer a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
   color: #2B4862;
-  -webkit-transition: all 0.5s ease;
-          transition: all 0.5s ease;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
 }
 
 .venueContainer a:hover {
@@ -430,7 +435,43 @@ input[type=radio] {
 }
 
 .social-box {
-  margin-top: 25px;
+  margin: 25px 0;
+}
+
+.social-box .twitter-btn {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background: #F1B04D;
+  padding: 20px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(43, 72, 98, 0.9);
+  text-shadow: 1px 1px 0 #2B4862;
+  border: 1px solid transparent;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #fff;
+  background: #F1B04D;
+  padding: 5px 10px;
+}
+
+.social-box .twitter-btn:hover {
+  background: #ed9b1e;
+  color: #f2f2f2;
+  border: 1px solid #2B4862;
+}
+
+.social-box .twitter-btn:active {
+  background: #ed9b1e;
+  color: #f2f2f2;
+  border: 1px solid #2B4862;
+  box-shadow: 1px 1px 0 #2B4862;
 }
 
 .modal-container {
@@ -475,9 +516,9 @@ input[type=radio] {
   max-width: 500px;
   background: rgba(255, 255, 255, 0.9);
   padding: 20px;
+  margin: auto;
   position: relative;
   z-index: 10;
-  margin: auto;
   box-shadow: 5px 10px 0 rgba(43, 72, 98, 0.6);
 }
 
@@ -532,13 +573,13 @@ input[type=radio] {
 /*MEDIA QUERIES*/
 @media all and (max-width: 1020px) {
   .wrapper {
-    margin: 50px 10px;
+    margin: 50px 20px;
   }
 }
 
 @media all and (max-width: 800px) {
   .wrapper {
-    margin: 25px 10px;
+    margin: 25px 20px;
   }
   .button-container {
     width: 75%;
@@ -571,11 +612,14 @@ input[type=radio] {
   h1 {
     font-size: 4rem;
   }
+  .modal {
+    margin: auto 5%;
+  }
 }
 
 @media all and (max-width: 485px) {
   .wrapper {
-    margin: 10px;
+    margin: 15px;
   }
   h1 {
     font-size: 3.5rem;
