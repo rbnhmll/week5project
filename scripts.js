@@ -1,8 +1,11 @@
+// Initialize mapbox
 var map = L.map('map').setView([43.65323,-79.38318
 ], 12);
 
+// Disable scrolling when hovering on map
 map.scrollWheelZoom.disable();
 
+// Some Mapbox specifics for on load [suplied by mapbox]
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
@@ -10,7 +13,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: "pk.eyJ1IjoicmJuaG1sbCIsImEiOiI3NjY4ZDk5NjFhMTYyMDMxMWFmMmM5YWEzMzlkMDgwZiJ9.Ep7u1zX_6SFI94jPki9O-w"
 }).addTo(map);
 
-
+// define app object.
 var app = {};
 app.clientId = "RUPFMKH0N5PWTIS43LH20C1AWZCMSRJOF02L1Q0PBXEVXIR0";
 app.clientSecret = "YRFJZOCG0J3RAJCLGTTAPORHLNBHRNO0X0DSBTBRNA21HMFS";
@@ -96,7 +99,7 @@ app.getGeocode = function() {
 			format: "json"
 		}
 	});
-	// This is a promise below. Check it!
+	// This is a promise.
 	$.when(call1,call2).then(function(res1,res2) {
 		var coords1 = res1[0].features[0].geometry.coordinates;
 		var coords2 = res2[0].features[0].geometry.coordinates;
@@ -135,9 +138,6 @@ app.getMidpoint = function(coords1,coords2) {
 
 
 	var centerPt = turf.center(features);
-	// centerPt.properties['marker-size'] = 'large';
-	// centerPt.properties['marker-color'] = '#000';
-	
 	var centerPtResult = centerPt.geometry.coordinates;
 	
 	centerPtResult = centerPtResult[0] + "," + centerPtResult[1];
